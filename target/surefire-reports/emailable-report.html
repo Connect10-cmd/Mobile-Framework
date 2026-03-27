@@ -9,11 +9,93 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Vevahik Suite</th></tr>
-<tr><td><a href="#t0">Startup Tests</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">14,185</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Framework Tests</a></td><td class="num">9</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,129</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Mobile Tests</a></td><td class="num">1</td><td class="num attn">2</td><td class="num">0</td><td class="num attn">2</td><td class="num">175,456</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">10</th><th class="num attn">2</th><th class="num">0</th><th class="num attn">2</th><th class="num">180,585</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Vevahik Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Startup Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">tests.StartUP.verifylanding</td><td><a href="#m0">verifyAppLaunch</a></td><td rowspan="1">1774608832972</td><td rowspan="1">372</td></tr><tr class="passedeven"><td><a href="#m1">verifyNavigationOptions</a></td><td rowspan="1">1774608836413</td><td rowspan="1">6706</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Vevahik Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Framework Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">tests.framework.AndroidDeviceHelperTest</td><td><a href="#m0">shouldFallbackToConnectedDeviceWhenConfiguredUdidIsUnavailable</a></td><td rowspan="1">1774640861972</td><td rowspan="1">5040</td></tr><tr class="passedeven"><td><a href="#m1">shouldPreferProvidedUdidWhenResolvingTargetDevice</a></td><td rowspan="1">1774640867032</td><td rowspan="1">1</td></tr><tr class="passedodd"><td rowspan="2">tests.framework.DriverFactoryTest</td><td><a href="#m2">shouldBuildAndroidOptionsFromSystemProperties</a></td><td rowspan="1">1774640867041</td><td rowspan="1">24</td></tr><tr class="passedodd"><td><a href="#m3">shouldUseServerUrlFromSystemProperties</a></td><td rowspan="1">1774640867067</td><td rowspan="1">0</td></tr><tr class="passedeven"><td rowspan="2">tests.framework.FrameworkConfigTest</td><td><a href="#m4">shouldPreferSystemPropertyValue</a></td><td rowspan="1">1774640867034</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m5">shouldReturnFirstAvailableSystemProperty</a></td><td rowspan="1">1774640867040</td><td rowspan="1">0</td></tr><tr class="passedodd"><td rowspan="3">tests.framework.PageValidationTest</td><td><a href="#m6">shouldRejectNullDriverForFrameworkClasses</a></td><td rowspan="1">1774640867068</td><td rowspan="1">2</td></tr><tr class="passedodd"><td><a href="#m7">shouldRejectUnsupportedGenderType</a></td><td rowspan="1">1774640867070</td><td rowspan="1">10</td></tr><tr class="passedodd"><td><a href="#m8">shouldRejectUnsupportedProfileType</a></td><td rowspan="1">1774640867081</td><td rowspan="1">0</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Mobile Tests &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">tests.LoginTest</td><td><a href="#m9">tearDown</a></td><td rowspan="1">1774641037366</td><td rowspan="1">173</td></tr><tr class="failedodd"><td rowspan="1">tests.StartUP.SignUpTest</td><td><a href="#m10">setupPage</a></td><td rowspan="1">1774640958655</td><td rowspan="1">46972</td></tr><tr><th colspan="4">Mobile Tests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tests.LoginTest</td><td><a href="#m11">launchTest</a></td><td rowspan="1">1774641017649</td><td rowspan="1">19713</td></tr><tr class="failedodd"><td rowspan="1">tests.StartUP.VerifyLandingTest</td><td><a href="#m12">verifyNavigationOptions</a></td><td rowspan="1">1774640872838</td><td rowspan="1">81043</td></tr><tr><th colspan="4">Mobile Tests &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">tests.StartUP.SignUpTest</td><td><a href="#m13">setupPage</a></td><td rowspan="1">1774641013987</td><td rowspan="1">0</td></tr><tr><th colspan="4">Mobile Tests &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="2">tests.StartUP.SignUpTest</td><td><a href="#m14">verifyInvalidMobileNumber</a></td><td rowspan="1">1774641013988</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m15">verifyValidSignUpFlow</a></td><td rowspan="1">1774641010636</td><td rowspan="1">0</td></tr><tr><th colspan="4">Mobile Tests &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.StartUP.VerifyLandingTest</td><td><a href="#m16">verifyAppLaunch</a></td><td rowspan="1">1774640870391</td><td rowspan="1">219</td></tr></tbody>
 </table>
-<h2>Startup Tests</h2><h3 id="m0">tests.StartUP.verifylanding#verifyAppLaunch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.StartUP.verifylanding#verifyNavigationOptions</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Framework Tests</h2><h3 id="m0">tests.framework.AndroidDeviceHelperTest#shouldFallbackToConnectedDeviceWhenConfiguredUdidIsUnavailable</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tests.framework.AndroidDeviceHelperTest#shouldPreferProvidedUdidWhenResolvingTargetDevice</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">tests.framework.DriverFactoryTest#shouldBuildAndroidOptionsFromSystemProperties</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tests.framework.DriverFactoryTest#shouldUseServerUrlFromSystemProperties</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tests.framework.FrameworkConfigTest#shouldPreferSystemPropertyValue</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">tests.framework.FrameworkConfigTest#shouldReturnFirstAvailableSystemProperty</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">tests.framework.PageValidationTest#shouldRejectNullDriverForFrameworkClasses</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">tests.framework.PageValidationTest#shouldRejectUnsupportedGenderType</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">tests.framework.PageValidationTest#shouldRejectUnsupportedProfileType</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Mobile Tests</h2><h3 id="m9">tests.LoginTest#tearDown</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>[TestResult name=launchTest status=FAILURE method=LoginTest.launchTest()[pri:0, instance:tests.LoginTest@55de24cc] output={null}]</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: Error executing adbExec. Original error: &apos;Command &apos;/Users/sachin/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell &apos;settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy&apos;&apos; exited with code 1&apos;; Command output: adb: device offline
+
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [bbb861e2-5c3c-45ec-9901-592143764c3b, quit {}]
+Capabilities {appium:appActivity: .MainActivity, appium:appPackage: com.hiteshi.vevahik, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: .MainActivity, appPackage: com.hiteshi.vevahik, automationName: UiAutomator2, deviceName: Android Device, newCommandTimeout: 60, noReset: true, platformName: android, udid: emulator-5554}, appium:deviceApiLevel: 37, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone16k_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1280x2856, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 60, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 17, appium:statBarHeight: 156, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 2700, left: 0, top: 156, width: 1280}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: bbb861e2-5c3c-45ec-9901-592143764c3b
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:313)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)
+	at base.BaseTest.tearDown(BaseTest.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 41 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">tests.StartUP.SignUpTest#setupPage</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: None of the provided locators were clickable
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at utils.ElementActions.clickFirst(ElementActions.java:43)
+	at pages.HomePage.clickSignUp(HomePage.java:59)
+	at pages.HomePage.goToSignUp(HomePage.java:67)
+	at tests.StartUP.SignUpTest.setupPage(SignUpTest.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">tests.LoginTest#launchTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: None of the provided locators were clickable
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at utils.ElementActions.clickFirst(ElementActions.java:43)
+	at pages.HomePage.clickLogin(HomePage.java:72)
+	at pages.HomePage.goToLogin(HomePage.java:79)
+	at tests.LoginTest.launchTest(LoginTest.java:16)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">tests.StartUP.VerifyLandingTest#verifyNavigationOptions</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: None of the provided locators were clickable
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at utils.ElementActions.clickFirst(ElementActions.java:43)
+	at pages.HomePage.clickSignUp(HomePage.java:59)
+	at pages.HomePage.goToSignUp(HomePage.java:67)
+	at tests.StartUP.VerifyLandingTest.verifyNavigationOptions(VerifyLandingTest.java:33)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">tests.StartUP.SignUpTest#setupPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">tests.StartUP.SignUpTest#verifyInvalidMobileNumber</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: None of the provided locators were clickable
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at utils.ElementActions.clickFirst(ElementActions.java:43)
+	at pages.HomePage.clickSignUp(HomePage.java:59)
+	at pages.HomePage.goToSignUp(HomePage.java:67)
+	at tests.StartUP.SignUpTest.setupPage(SignUpTest.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">tests.StartUP.SignUpTest#verifyValidSignUpFlow</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: None of the provided locators were clickable
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.3.1&apos;, java.version: &apos;17.0.17&apos;
+Driver info: driver.version: unknown
+	at utils.ElementActions.clickFirst(ElementActions.java:43)
+	at pages.HomePage.clickSignUp(HomePage.java:59)
+	at pages.HomePage.goToSignUp(HomePage.java:67)
+	at tests.StartUP.SignUpTest.setupPage(SignUpTest.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">tests.StartUP.VerifyLandingTest#verifyAppLaunch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

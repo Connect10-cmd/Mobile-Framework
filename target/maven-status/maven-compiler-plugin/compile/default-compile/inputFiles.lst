@@ -1,9 +1,13 @@
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\pages\LoginPage.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\utils\ElementActions.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\base\BasePage.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\driver\DriverFactory.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\utils\waitUtils.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\pages\ExploreProfilesPage.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\pages\SignUpPage.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\base\BaseTest.java
-C:\Users\sachin.tiwari\mobile-framework\src\main\java\pages\HomePage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/driver/DriverFactory.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/driver/AndroidDeviceHelper.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/pages/ExploreProfilesPage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/pages/LoginPage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/pages/SignUpPage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/utils/ReportManager.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/pages/HomePage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/config/FrameworkConfig.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/base/BaseTest.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/utils/WaitUtils.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/driver/DriverManager.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/base/BasePage.java
+/Users/sachin/Downloads/Mobile Framework/Mobile-Framework/src/main/java/utils/ElementActions.java
