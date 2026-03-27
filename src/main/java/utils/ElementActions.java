@@ -67,4 +67,11 @@ public class ElementActions {
         }
         return null;
     }
-}
+
+    public void type(By locator, String text) {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.clear();
+        element.sendKeys(text);
+    }
+
+    }
