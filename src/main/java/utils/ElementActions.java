@@ -1,77 +1,87 @@
 package utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import config.FrameworkConfig;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
 
 public class ElementActions {
 
     private final WebDriver driver;
-    private final WebDriverWait wait;
+    private final WaitUtils waitUtils;
 
     public ElementActions(WebDriver driver) {
+        if (driver == null) {
+            throw new IllegalArgumentException("Driver cannot be null while creating ElementActions");
+        }
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        this.waitUtils = new WaitUtils(driver, FrameworkConfig.getLong("element.timeout.seconds", 15L));
     }
 
+    // ================= CLICK =================
+
     public void click(By locator) {
-        WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        WebElement el = waitUtils.waitForClickable(locator);
         el.click();
+    }
+
+    public void safeClick(By locator) {
+        try {
+            click(locator);
+        } catch (Exception e) {
+            WebElement el = waitUtils.waitForVisibility(locator);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
+        }
     }
 
     public void clickFirst(By... locators) {
         for (By locator : locators) {
             try {
-                WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator));
-                el.click();
+                click(locator);
                 return;
-            } catch (Exception ignored) {
-                // try next locator
-            }
+            } catch (Exception ignored) {}
         }
-        throw new org.openqa.selenium.TimeoutException("None of the provided locators were clickable");
+        throw new TimeoutException("None of the provided locators were clickable");
     }
+
+    // ================= INPUT =================
+
+    public void type(By locator, String text) {
+        WebElement el = waitUtils.waitForVisibility(locator);
+        el.clear();
+        el.sendKeys(text);
+    }
+
+    public void sendKeys(By locator, String text) {
+        type(locator, text);
+    }
+
+    // ================= VALIDATION =================
 
     public boolean isDisplayed(By locator) {
         try {
-            WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return el.isDisplayed();
+            waitUtils.waitForVisibility(locator);
+            return true;
         } catch (Exception e) {
             return false;
         }
     }
 
-    public void sendKeys(By locator, String text) {
-        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        el.clear();
-        el.sendKeys(text);
+    public String getText(By locator) {
+        return waitUtils.waitForVisibility(locator).getText();
     }
 
-    public String getText(By locator) {
-        WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        return el.getText();
-    }
+    // ================= ADVANCED =================
 
     public WebElement findFirst(By... locators) {
         for (By locator : locators) {
             try {
-                WebElement el = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-                return el;
-            } catch (Exception ignored) {
-                // try next
-            }
+                return waitUtils.waitForVisibility(locator);
+            } catch (Exception ignored) {}
         }
-        return null;
+        throw new NoSuchElementException("None of the locators found");
     }
 
-    public void type(By locator, String text) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        element.clear();
-        element.sendKeys(text);
+    public void waitForInvisibility(By locator) {
+        waitUtils.waitForInvisibility(locator);
     }
-
-    }
+}

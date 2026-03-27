@@ -9,13 +9,16 @@ public class ExploreProfilesPage extends BasePage {
 
     private final By pageHeader = AppiumBy.accessibilityId("explore_profiles_header");
     private final By firstProfile = AppiumBy.accessibilityId("profile_0");
+    private final By fallbackHeader = By.xpath(
+            "//*[contains(@content-desc,'Explore') or contains(@text,'Explore') or contains(translate(@text,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'profile')]"
+    );
 
     public ExploreProfilesPage(WebDriver driver) {
         super(driver);
     }
 
     public boolean isLoaded() {
-        return elementActions.isDisplayed(pageHeader);
+        return elementActions.isDisplayed(pageHeader) || elementActions.isDisplayed(fallbackHeader);
     }
 
     public void openFirstProfile() {

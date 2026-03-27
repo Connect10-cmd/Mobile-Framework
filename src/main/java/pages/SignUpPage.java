@@ -4,10 +4,13 @@ import base.BasePage;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import io.appium.java_client.AppiumBy;
-
 
 public class SignUpPage extends BasePage {
+
+    private final By pageHeader = AppiumBy.accessibilityId("Continue");
+    private final By fallbackHeader = By.xpath(
+            "//*[contains(@content-desc,'Continue') or contains(@text,'Continue') or contains(translate(@text,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'mobile')]"
+    );
 
     public SignUpPage(WebDriver driver) {
         super(driver);
@@ -15,26 +18,42 @@ public class SignUpPage extends BasePage {
 
     // ================= LOCATORS =================
 
-   private By mySelf = AppiumBy.accessibilityId("Myself");
+    // Profile चयन
+    private By mySelf = AppiumBy.accessibilityId("Myself");
     private By myDaughter = AppiumBy.accessibilityId("My Daughter");
     private By mySon = AppiumBy.accessibilityId("My Son");
-    private By myBrother = AppiumBy.accessibilityId("My Brother");
-    private By mySister = AppiumBy.accessibilityId("My Sister");
     private By myFriend = AppiumBy.accessibilityId("My Friend");
-    private By myRelative = AppiumBy.accessibilityId("My Relative");
 
+    // Gender
     private By male = AppiumBy.accessibilityId("Male");
     private By female = AppiumBy.accessibilityId("Female");
 
+    // Buttons
     private By continueBtn = AppiumBy.accessibilityId("Continue");
     private By tryAgainBtn = AppiumBy.accessibilityId("Try Again");
+    private By verifyContinueBtn = AppiumBy.accessibilityId("Verify & Continue");
 
+    // Inputs (IMPORTANT: differentiate)
+    private By mobileInput = By.xpath("(//android.widget.EditText)[1]");
+    private By otpInput = By.xpath("(//android.widget.EditText)[2]");
+
+    // Errors
     private By mobileError = AppiumBy.accessibilityId("Mobile number must be at least 10 digits");
 
-    // Fallback xpath
-    private By mobileInput = By.xpath("//android.widget.EditText");
+    // Success Screen
+    private By successScreen = AppiumBy.accessibilityId("Success");
 
     // ================= ACTIONS =================
+
+    public boolean isLoaded() {
+        return elementActions.isDisplayed(pageHeader)
+                || elementActions.isDisplayed(fallbackHeader)
+                || isProfileOptionsVisible();
+    }
+
+    public boolean isPageLoaded() {
+        return isLoaded();
+    }
 
     public void selectProfile(String profileType) {
         switch (profileType.toLowerCase()) {
@@ -47,21 +66,16 @@ public class SignUpPage extends BasePage {
             case "son":
                 elementActions.click(mySon);
                 break;
-            case "brother":
-                elementActions.click(myBrother);
-                break;
-            case "sister":
-                elementActions.click(mySister);
-                break;
             case "friend":
                 elementActions.click(myFriend);
-                break;
-            case "relative":
-                elementActions.click(myRelative);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid profile type");
         }
+    }
+
+    public boolean isProfileOptionsVisible() {
+        return elementActions.isDisplayed(mySelf);
     }
 
     public void selectGender(String gender) {
@@ -78,19 +92,27 @@ public class SignUpPage extends BasePage {
         elementActions.type(mobileInput, number);
     }
 
-    public void clickContinue() {
-        elementActions.click(continueBtn);
-    }
-
     public boolean isMobileErrorDisplayed() {
         return elementActions.isDisplayed(mobileError);
+    }
+
+    public void clickContinue() {
+        elementActions.click(continueBtn);
     }
 
     public void clickTryAgain() {
         elementActions.click(tryAgainBtn);
     }
 
-    public boolean isPageLoaded() {
-        return elementActions.isDisplayed(mySelf);
+    public void enterOTP(String otp) {
+        elementActions.type(otpInput, otp);
+    }
+
+    public void clickVerifyAndContinue() {
+        elementActions.click(verifyContinueBtn);
+    }
+
+    public boolean isSuccessScreenDisplayed() {
+        return elementActions.isDisplayed(successScreen);
     }
 }

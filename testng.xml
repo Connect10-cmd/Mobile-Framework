@@ -1,13 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Vevahik Suite">
-
-    <listeners>
-        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
-    </listeners>
-
-    <test name="Startup Tests">
+    <test name="Framework Tests">
         <classes>
-            <class name="tests.StartUP.verifylanding"/>
+            <class name="tests.framework.AndroidDeviceHelperTest"/>
+            <class name="tests.framework.FrameworkConfigTest"/>
+            <class name="tests.framework.DriverFactoryTest"/>
+            <class name="tests.framework.PageValidationTest"/>
+        </classes>
+    </test>
+
+    <test name="Mobile Tests">
+        <classes>
+            <class name="tests.StartUP.VerifyLandingTest"/>
+            <class name="tests.StartUP.SignUpTest"/>
+            <class name="tests.LoginTest"/>
         </classes>
     </test>
 

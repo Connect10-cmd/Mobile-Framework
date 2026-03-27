@@ -1,36 +1,41 @@
 package utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import io.appium.java_client.android.AndroidDriver;
 
 import java.time.Duration;
 
-public class waitUtils {
+public class WaitUtils {
 
-    private AndroidDriver driver;
-    private WebDriverWait wait;
+    private final WebDriver driver;
+    private final WebDriverWait wait;
 
-    public waitUtils(AndroidDriver driver, long timeoutSeconds) {
+    public WaitUtils(WebDriver driver, long timeoutSeconds) {
+        if (driver == null) {
+            throw new IllegalArgumentException("Driver cannot be null while creating WaitUtils");
+        }
+
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
     }
 
-    public waitUtils(AndroidDriver driver) {
+    public WaitUtils(WebDriver driver) {
         this(driver, 10);
     }
 
-    public void waitForVisibility(By locator) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public WebElement waitForVisibility(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void waitForClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    public WebElement waitForClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public void waitForPresence(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    public WebElement waitForPresence(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     public boolean isElementPresent(By locator) {
@@ -38,8 +43,15 @@ public class waitUtils {
             waitForPresence(locator);
             return true;
         } catch (Exception e) {
-            System.out.println("WaitUtils.isElementPresent failed: " + e.getMessage());
             return false;
         }
+    }
+
+    public boolean waitForInvisibility(By locator) {
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
